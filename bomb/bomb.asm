@@ -571,7 +571,7 @@ Disassembly of section .text:
   40119f:	b8 01 00 00 00       	mov    $0x1,%eax
   4011a4:	ba d0 32 60 00       	mov    $0x6032d0,%edx
   4011a9:	eb cb                	jmp    401176 <phase_6+0x82>
-  
+
   4011ab:	48 8b 5c 24 20       	mov    0x20(%rsp),%rbx
   4011b0:	48 8d 44 24 28       	lea    0x28(%rsp),%rax
   4011b5:	48 8d 74 24 50       	lea    0x50(%rsp),%rsi
@@ -611,14 +611,14 @@ Disassembly of section .text:
   401211:	7e 0d                	jle    401220 <fun7+0x1c>
   401213:	48 8b 7f 08          	mov    0x8(%rdi),%rdi
   401217:	e8 e8 ff ff ff       	callq  401204 <fun7>
-  40121c:	01 c0                	add    %eax,%eax
+  40121c:	01 c0                	add    %eax,%eax                   # 每次往左走，使返回值 * 2
   40121e:	eb 1d                	jmp    40123d <fun7+0x39>
   401220:	b8 00 00 00 00       	mov    $0x0,%eax
   401225:	39 f2                	cmp    %esi,%edx
   401227:	74 14                	je     40123d <fun7+0x39>
   401229:	48 8b 7f 10          	mov    0x10(%rdi),%rdi
   40122d:	e8 d2 ff ff ff       	callq  401204 <fun7>
-  401232:	8d 44 00 01          	lea    0x1(%rax,%rax,1),%eax
+  401232:	8d 44 00 01          	lea    0x1(%rax,%rax,1),%eax       # 每次往右走，使返回值 = 1 + ax*2
   401236:	eb 05                	jmp    40123d <fun7+0x39>
   401238:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
   40123d:	48 83 c4 08          	add    $0x8,%rsp
